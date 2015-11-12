@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ getState()
+comment1.params=state
+comment1.target=void\ setState(java.lang.String)
+comment2.params=
+comment2.target=Memento\ createMemento()
+comment3.params=memento
+comment3.target=void\ setMemento(Memento)
+comment4.params=
+comment4.target=void\ show()
+numComments=5
