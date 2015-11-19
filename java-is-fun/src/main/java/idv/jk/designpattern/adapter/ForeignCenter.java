@@ -15,7 +15,7 @@ public class ForeignCenter
 
     public void defenseInNonEnglish()
     {
-        System.out.printf("外籍中鋒 %s 進攻%n", name);
+        System.out.printf("外籍中鋒 %s 防守%n", name);
     }
 
     public String getName()
