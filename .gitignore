@@ -12,5 +12,8 @@
 hs_err_pid*
 **/.gradle/
 **/.idea/
+<<<<<<< HEAD
 **/*.iml
 **/gradle/wrapper/
+=======
+>>>>>>> 8f9373e6bb3cd417497b8bfa34b71b9e5683a80b

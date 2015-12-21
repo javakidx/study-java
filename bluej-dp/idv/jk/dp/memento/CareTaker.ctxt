@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Memento\ getMemento()
+comment1.params=memento
+comment1.target=void\ setMemento(Memento)
+numComments=2
