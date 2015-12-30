@@ -12,6 +12,10 @@
 hs_err_pid*
 **/.gradle/
 **/.idea/
+**/target/
+**/.settings/
+**/.project
+**/.classpath
 **/*.iml
 **/gradle/wrapper/
 **/.DS_Store
