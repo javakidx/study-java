@@ -1,25 +1,33 @@
 package idv.jk.hf.ooad.dogdoor;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 /**
  * Created by bioyang on 2015/12/21.
  */
 public class DogDoor {
     private boolean open;
+    private List allowedBarks;
 
-    public DogDoor(){
-        this.open = false;
+    public DogDoor() {
+        this.allowedBarks = new LinkedList();
+        open = false;
     }
 
-    public void open(){
+    public void addAllowedBark(Bark bark) {
+        allowedBarks.add(bark);
+    }
+
+    public List getAllowedBarks() {
+        return allowedBarks;
+    }
+
+    public void open() {
         System.out.println("The dog door opens.");
-        this.open = true;
+        open = true;
 
         final Timer timer = new Timer();
         timer.schedule(new TimerTask() {
-            @Override
             public void run() {
                 close();
                 timer.cancel();
@@ -27,12 +35,12 @@ public class DogDoor {
         }, 5000);
     }
 
-    public void close(){
+    public void close() {
         System.out.println("The dog door closes.");
-        this.open = false;
+        open = false;
     }
 
-    public boolean isOpen(){
-        return this.open;
+    public boolean isOpen() {
+        return open;
     }
 }
