@@ -18,4 +18,9 @@ public class Customer {
 	public String getName() {
 		return this.name;
 	}
+
+	public String statement() {
+		//TODO
+		return "";
+	}
 }
