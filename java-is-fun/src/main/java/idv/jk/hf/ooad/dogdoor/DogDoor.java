@@ -1,6 +1,9 @@
 package idv.jk.hf.ooad.dogdoor;
 
-import java.util.*;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by bioyang on 2015/12/21.
