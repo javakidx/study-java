@@ -45,7 +45,9 @@ public class Customer {
 					}
 					break;
 			}*/
-			double thisAmount = amountFor(rental);	//1st
+			//3rd double thisAmount = amountFor(rental);	//1st
+			//reduce temp variable ↓
+			//double thisAmount = rental.getCharge(); //3rd
 			//add frequent renter points
 			frequentRenterPoints++;
 
@@ -54,8 +56,8 @@ public class Customer {
 				frequentRenterPoints++;
 			}
 			//show figures for this rental
-			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
-			totalAmount += thisAmount;
+			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.getCharge()/*thisAmount*/) + "\n";
+			totalAmount += rental.getCharge();//thisAmount;
 		}
 		//add footer lines
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
@@ -64,27 +66,30 @@ public class Customer {
 		return result;
 	}
 
-	//1st
-	private double amountFor(Rental rental) {
-		double thisAmount = 0;
+	//1st added
+
+	//3rd private double amountFor(Rental rental) {
+	//3rd 	return rental.getCharge(); //2nd
+		/* 2nd
+		double result = 0;
 
 		switch (rental.getMovie().getPriceCode()) {
 			case Movie.REGULAR:
-				thisAmount += 2;
+				result += 2;
 				if (rental.getDaysRented() > 2) {
-					thisAmount += (rental.getDaysRented() - 2) * 1.5;
+					result += (rental.getDaysRented() - 2) * 1.5;
 				}
 				break;
 			case Movie.NEW_RELEASE:
-				thisAmount += rental.getDaysRented() * 3;
+				result += rental.getDaysRented() * 3;
 				break;
 			case Movie.CHILDRENS:
-				thisAmount += 1.5;
+				result += 1.5;
 				if (rental.getDaysRented() > 3) {
-					thisAmount += (rental.getDaysRented() - 3) * 1.5;
+					result += (rental.getDaysRented() - 3) * 1.5;
 				}
 				break;
 		}
-		return thisAmount;
-	}
+		return result;*/
+	//3rd }
 }
