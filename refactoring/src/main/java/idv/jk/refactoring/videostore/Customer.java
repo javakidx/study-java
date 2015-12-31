@@ -49,12 +49,12 @@ public class Customer {
 			//reduce temp variable ↓
 			//double thisAmount = rental.getCharge(); //3rd
 			//add frequent renter points
-			frequentRenterPoints++;
-
+			//frequentRenterPoints++;	//extract the method to calculate frequent points
+			frequentRenterPoints += rental.getFrequentRenterPoints();
 			//add bonus for a two day new release rental
-			if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1) {
-				frequentRenterPoints++;
-			}
+			//if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1) {//extract the method to calculate frequent points
+			//	frequentRenterPoints++;
+			//}
 			//show figures for this rental
 			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.getCharge()/*thisAmount*/) + "\n";
 			totalAmount += rental.getCharge();//thisAmount;
