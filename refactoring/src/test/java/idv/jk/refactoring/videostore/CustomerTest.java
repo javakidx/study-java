@@ -27,7 +27,7 @@ public class CustomerTest {
 
         String exactResult = mary.statement();
         //System.out.println(exactResult);
-        assertNotNull(exactResult);
+        //assertNotNull(exactResult);
         assertEquals(EXPECTED_RESULT_OF_STATEMENT, exactResult);
     }
 
