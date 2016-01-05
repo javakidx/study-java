@@ -17,7 +17,7 @@ public class CustomerTest {
     @Test
     public void testStatement() {
         Movie newMovie = new Movie("DH4", Movie.NEW_RELEASE);
-        Movie childMovie = new Movie("Shaun the Sheep", Movie.CHILDRENS);
+        Movie childMovie = new Movie("Shaun the Sheep", Movie.CHILDREN);
         Rental rental = new Rental(newMovie, 3);
         Rental rental1 = new Rental(childMovie, 5);
 
