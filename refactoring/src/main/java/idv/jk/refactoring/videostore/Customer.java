@@ -20,8 +20,8 @@ public class Customer {
 	}
 
 	public String statement() {
-		double totalAmount = 0;
-		int frequentRenterPoints = 0;
+		//double totalAmount = 0; replace temp with query
+		//int frequentRenterPoints = 0; replace temp with query
 
 		String result  = "Rental Record for " + getName() + "\n";
 		for (Rental rental : rentalList) {
@@ -50,22 +50,39 @@ public class Customer {
 			//double thisAmount = rental.getCharge(); //3rd
 			//add frequent renter points
 			//frequentRenterPoints++;	//extract the method to calculate frequent points
-			frequentRenterPoints += rental.getFrequentRenterPoints();
+			//frequentRenterPoints += rental.getFrequentRenterPoints(); replace temp with query
 			//add bonus for a two day new release rental
 			//if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1) {//extract the method to calculate frequent points
 			//	frequentRenterPoints++;
 			//}
 			//show figures for this rental
 			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.getCharge()/*thisAmount*/) + "\n";
-			totalAmount += rental.getCharge();//thisAmount;
+			//totalAmount += rental.getCharge();//thisAmount; remove temp variable again
 		}
 		//add footer lines
-		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+		result += "Amount owed is " + String.valueOf(getTotalCharge()/*totalAmount*/) + "\n";
+		result += "You earned " + String.valueOf(getTotalFrequentRenterPoints()/*frequentRenterPoints*/) + " frequent renter points";
 		//System.out.println(result);
 		return result;
 	}
 
+	private double getTotalCharge() {
+		double result = 0;
+		for (Rental rental : this.rentalList) {
+			result += rental.getCharge();
+		}
+		return result;
+	}
+
+	private int getTotalFrequentRenterPoints() {
+		int points = 0;
+
+		for (Rental rental : this.rentalList) {
+			points += rental.getFrequentRenterPoints();
+		}
+
+		return points;
+	}
 	//1st added
 
 	//3rd private double amountFor(Rental rental) {
