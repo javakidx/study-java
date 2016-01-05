@@ -1,7 +1,7 @@
 package idv.jk.refactoring.videostore;
 
 public class Movie {
-	public static final int CHILDRENS = 2;
+	public static final int CHILDREN = 2;
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
 	
@@ -36,7 +36,7 @@ public class Movie {
 			case Movie.NEW_RELEASE:
 				result += rentedDays * 3;
 				break;
-			case Movie.CHILDRENS:
+			case Movie.CHILDREN:
 				result += 1.5;
 				if (rentedDays > 3) {
 					result += (rentedDays - 3) * 1.5;
