@@ -3,42 +3,9 @@ package idv.jk.hf.ooad.guitarinventory;
 /**
  * Created by bioyang on 2015/11/19.
  */
-public class Guitar
+public class Guitar extends Instrument
 {
-    private String serailNumber;
-    private double price;
-    private Builder mBuilder;
-    private Type mType;
-    private Wood mBackWood;
-    private Wood mTopWood;
-
-    public String getSerailNumber()
-    {
-        return serailNumber;
-    }
-
-    public double getPrice()
-    {
-        return price;
-    }
-
-    public Builder getBuilder()
-    {
-        return mBuilder;
-    }
-
-    public Type getType()
-    {
-        return mType;
-    }
-
-    public Wood getBackWood()
-    {
-        return mBackWood;
-    }
-
-    public Wood getTopWood()
-    {
-        return mTopWood;
+    public Guitar(String serialNumber, double price, GuitarSpec spec) {
+        super(serialNumber, price, spec);
     }
 }

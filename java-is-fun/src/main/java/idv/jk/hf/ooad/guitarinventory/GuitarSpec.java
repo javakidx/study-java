@@ -6,69 +6,30 @@ package idv.jk.hf.ooad.guitarinventory;
 public class GuitarSpec extends InstrumentSpec{
     private int numStrings;
 
+    public GuitarSpec(Builder builder, String model, Type type, int numStrings, Wood backWood, Wood topWood) {
+        super(builder, model, type, backWood, topWood);
+        this.numStrings = numStrings;
+    }
+
     public int getNumStrings() {
         return numStrings;
     }
 
     @Override
-    public boolean matches(InstrumentSpec spec) {
-        return false;
+    public boolean matches(InstrumentSpec otherSpec) {
+        if (!(otherSpec instanceof GuitarSpec)) {
+            return false;
+        }
+
+        if (!super.matches(otherSpec)) {
+            return false;
+        }
+
+        GuitarSpec guitarSpec = (GuitarSpec) otherSpec;
+        if (guitarSpec.numStrings != this.numStrings) {
+            return false;
+        }
+
+        return true;
     }
-//    private String model;
-//    private int numStrings;
-//
-//    private Builder builder;
-//    private Type type;
-//    private Wood topWood;
-//    private Wood backWood;
-//
-//    public String getModel() {
-//        return model;
-//    }
-//
-//    public void setModel(String model) {
-//        this.model = model;
-//    }
-//
-//    public int getNumStrings() {
-//        return numStrings;
-//    }
-//
-//    public void setNumStrings(int numStrings) {
-//        this.numStrings = numStrings;
-//    }
-//
-//    public Builder getBuilder() {
-//        return builder;
-//    }
-//
-//    public void setBuilder(Builder builder) {
-//        this.builder = builder;
-//    }
-//
-//    public Type getType() {
-//        return type;
-//    }
-//
-//    public void setType(Type type) {
-//        this.type = type;
-//    }
-//
-//    public Wood getTopWood() {
-//        return topWood;
-//    }
-//
-//    public void setTopWood(Wood topWood) {
-//        this.topWood = topWood;
-//    }
-//
-//    public Wood getBackWood() {
-//        return backWood;
-//    }
-//
-//    public void setBackWood(Wood backWood) {
-//        this.backWood = backWood;
-//    }
-
-
 }
