@@ -7,22 +7,22 @@ import java.util.List;
  * Created by bioyang on 2016/1/4.
  */
 public class Inventory {
-    private List<Instrument> instrumentList = new ArrayList<>();
+    private List<Instrument> inventory = new ArrayList<>();
 
     public void addInstrument(String serialNumber, double price, InstrumentSpec spec) {
-        Instrument instrument = null;
+        Instrument instrument = new Instrument(serialNumber, price, spec);
 
-        if (spec instanceof GuitarSpec) {
-            instrument = new Guitar(serialNumber, price, (GuitarSpec)spec);
-        } else if (spec instanceof MandolinSpec) {
-            instrument = new Mandolin(serialNumber, price, (MandolinSpec)spec);
-        }
+//        if (spec instanceof GuitarSpec) {
+//            instrument = new Guitar(serialNumber, price, (GuitarSpec)spec);
+//        } else if (spec instanceof MandolinSpec) {
+//            instrument = new Mandolin(serialNumber, price, (MandolinSpec)spec);
+//        }
 
-        instrumentList.add(instrument);
+        inventory.add(instrument);
     }
 
     public Instrument get(String serialNumber) {
-        for (Instrument instrument : this.instrumentList) {
+        for (Instrument instrument : this.inventory) {
             if (instrument.getSerialNumber().equals(serialNumber)) {
                 return instrument;
             }
@@ -31,7 +31,7 @@ public class Inventory {
     }
 
     public Guitar getGuitar(String serialNumber) {
-        for (Instrument instrument : this.instrumentList) {
+        for (Instrument instrument : this.inventory) {
             Guitar guitar = (Guitar)instrument;
             if (guitar.getSerialNumber().equals(serialNumber)) {
                 return guitar;
@@ -40,17 +40,15 @@ public class Inventory {
         return null;
     }
 
-    public List<Mandolin> search(MandolinSpec spec) {
-        List<Mandolin> matchingMandolins = new ArrayList<>();
+    public List<Instrument> search(InstrumentSpec spec) {
+        List<Instrument> matchingInstruments = new ArrayList<>();
 
-        for (Instrument instrument : this.instrumentList) {
-            Mandolin mandolin = (Mandolin)instrument;
-
-            if (mandolin.getSpec().matches(spec)) {
-                matchingMandolins.add(mandolin);
+        for (Instrument Instrument : this.inventory) {
+            if (Instrument.getSpec().matches(spec)) {
+                matchingInstruments.add(Instrument);
             }
         }
 
-        return matchingMandolins;
+        return matchingInstruments;
     }
 }
