@@ -2,22 +2,31 @@ package headfirst.gsf.board;
 
 import headfirst.gsf.unit.Unit;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by bioyang on 2016/3/11.
  */
 public class Tile {
-    public void addUnit(final Unit unit) {
+    private List<Unit> units;
+
+    public Tile() {
+        this.units = new LinkedList<>();
     }
 
-    public void removeUnit(final Unit unit) {
+    protected void addUnit(final Unit unit) {
+        units.add(unit);
     }
 
-    public void removeUnits() {
+    protected void removeUnit(final Unit unit) {
+        units.remove(unit);
     }
 
-    public List<Unit> getUnits() {
+    protected void removeUnits() {
+    }
+
+    protected List<Unit> getUnits() {
         return null;
     }
 }
