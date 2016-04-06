@@ -27,4 +27,11 @@ public class DogDoor {
     public boolean isOpen(){
         return this.open;
     }
+
+    public List<Bark> getAllowedBarks() {
+        return null;
+    }
+
+    public void addAllowedBark(Bark rowlf) {
+    }
 }
