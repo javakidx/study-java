@@ -5,7 +5,7 @@ package idv.jk.hf.ooad.guitarinventory;
  */
 public class Mandolin extends Instrument{
 
-    public Mandolin(String serialNumber, double price, MandolinSpec spec) {
+    public Mandolin(String serialNumber, double price, InstrumentSpec spec) {
         super(serialNumber, price, spec);
     }
 }
